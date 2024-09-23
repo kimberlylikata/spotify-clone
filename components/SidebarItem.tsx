@@ -5,7 +5,7 @@ import {twMerge} from "tailwind-merge";
 interface SidebarItemProps {
     icon: IconType;
     label: string;
-    active: boolean;
+    active?: boolean;
     href: string;
 
 }
@@ -15,7 +15,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     active,
     href
 }) => {
-    return {
+    return (
         <Link
         href={href}
         className={twMerge(
@@ -23,7 +23,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         )}
       >
         <Icon size={26} />
-        <p className="truncate w-full">{label}</p>
+        <p className="truncate w-100">{label}</p>
       </Link>
       
     );
